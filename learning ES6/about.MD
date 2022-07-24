@@ -1,0 +1,1 @@
+This folder gives a brief introduction to ES6.
