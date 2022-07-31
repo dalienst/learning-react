@@ -1,0 +1,60 @@
+Function components and rendering them:
+Example:
+function Car() {
+  return <h2>Hi, I am a Car!</h2>;
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car />);
+
+
+
+
+Component in components:
+Example:
+function Car() {
+  return <h2>I am a Car!</h2>;
+}
+
+function Garage() {
+  return (
+    <>
+      <h1>Who lives in my Garage?</h1>
+      <Car />
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);
+
+
+Components in files - importing components from different files.
+Example:
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Car from './Car.js';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car />);
+
+
+
+
+Properties - props.
+Example:
+function Car(props) {
+  return <h2>I am a {props.color} Car!</h2>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car color="red"/>);
+
+
+
+Class components (not advised):
+Example:
+class Car extends React.Component {
+  render() {
+    return <h2>Hi, I am a Car!</h2>;
+  }
+}

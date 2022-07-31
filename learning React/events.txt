@@ -1,0 +1,60 @@
+ADDING EVENTS
+Written in curly braces
+Example:
+<button onClick={shoot}>Take the Shot!</button>
+
+Example 2:
+function Football() {
+  const shoot = () => {
+    alert("Great Shot!");
+  }
+
+  return (
+    <button onClick={shoot}>Take the shot!</button>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Football />);
+
+
+
+PASSING ARGUMENTS
+To pass an argument to an event handler, use an arrow function:
+Example:
+function Football() {
+  const shoot = (a) => {
+    alert(a);
+  }
+
+  return (
+    <button onClick={() => shoot("Goal!")}>Take the shot!</button>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Football />);
+
+
+
+
+REACT EVENT OBJECT
+Event handlers have access to the React event that triggered the function
+Example:
+function Football() {
+  const shoot = (a, b) => {
+    alert(b.type);
+    /*
+    'b' represents the React event that triggered the function,
+    in this case the 'click' event
+    */
+  }
+
+  return (
+    <button onClick={(event) => shoot("Goal!", event)}>Take the shot!</button>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Football />);
+
